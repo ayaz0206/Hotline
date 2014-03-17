@@ -17,10 +17,11 @@ class QuestionsController < ApplicationController
       flash[:notice] = "Successfully Posted!"
       redirect_to question_path(@question)
     else
-      flash[:errors]
+      flash[:errors] = @question.errors.full_messages
       render 'new'
     end
   end
+  
   private
   def question_params
     params.require(:question).permit(:title, :description)

@@ -24,6 +24,10 @@ Given(/^I click "(.*?)"$/) do |button|
   click_button('Ask')
 end
 
-Then(/^I should see an error message$/) do
-  pending # express the regexp above with the code you wish you had
+Given(/^I only fill in the title$/) do
+  fill_in('question[title]', :with => 'How do I install Devise?')
+end
+
+Then(/^I should see an error "(.*?)"$/) do |error|
+  expect(page).to have_content(error)
 end

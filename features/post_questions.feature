@@ -14,6 +14,11 @@ Feature: Post Questions
   	Scenario: A User submits a question without title
   		And I only fill in the decription
       And I click "Ask" 
-      Then I should see an error message
+      Then I should see an error "Title can't be blank"
+
+    Scenario: A User submits a question without description
+      And I only fill in the title
+      And I click "Ask" 
+      Then I should see an error "Description can't be blank"
 
 
