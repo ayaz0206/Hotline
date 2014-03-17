@@ -12,9 +12,18 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    current_question = Question.create(title: params[:question][:title], description: params[:question][:description])
-    @current_id = current_question.id
-    redirect_to questions_show_path(@current_id)
+    @question = Question.new(question_params)
+    if @question.save
+      flash[:notice] = "Successfully Posted!"
+      redirect_to question_path(@question)
+    else
+      flash[:errors]
+      render 'new'
+    end
+  end
+  private
+  def question_params
+    params.require(:question).permit(:title, :description)
   end
 
 end

@@ -11,3 +11,19 @@ end
 Then(/^I can see the full question detail$/) do
   expect(page).to have_content("How do I install Devise?")
 end
+
+Then(/^I see the message "(.*?)"$/) do |message|
+  expect(page).to have_content(message)
+end
+
+Given(/^I only fill in the decription$/) do
+  fill_in('question[description]', :with => "Long Text..")
+end
+
+Given(/^I click "(.*?)"$/) do |button|
+  click_button('Ask')
+end
+
+Then(/^I should see an error message$/) do
+  pending # express the regexp above with the code you wish you had
+end

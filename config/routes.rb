@@ -2,11 +2,7 @@ Hotline::Application.routes.draw do
   
   root "questions#index"
 
-  get "question/:id", to: "questions#show", as: 'questions_show'
-
-  get "questions/new"
-
-  post "questions/create"
+  resources :questions
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

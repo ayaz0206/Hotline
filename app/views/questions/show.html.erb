@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+	<%= flash[:notice] %>
+<% end %>
+
 <section>
 <%= @question.title %> <br>
 <%= @question.description %>
