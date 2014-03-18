@@ -4,6 +4,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @qid = params[:id]
+    @responses = Response.all.select {|res| res.question_id == @qid}
     @question = Question.find_by_id(params[:id])
   end
 
