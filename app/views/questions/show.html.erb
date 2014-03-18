@@ -6,3 +6,11 @@
 <%= @question.title %> <br>
 <%= @question.description %>
 </section>
+
+<section>
+	<%= form_tag response_path :method => :post do |f| %>
+		<%= text_area_tag(:response) %>
+		<input type='hidden' name='question_id' value='<%=@question.id%>'>  
+		<%= submit_tag("Reply") %>
+	<% end %>
+</section>
