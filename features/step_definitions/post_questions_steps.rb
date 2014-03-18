@@ -25,9 +25,24 @@ Given(/^I click "(.*?)"$/) do |button|
 end
 
 Given(/^I only fill in the title$/) do
-  fill_in('question[title]', :with => 'How do I install Devise?')
+  fill_in('question[title]', :with => 'How do I install Devise?')  
 end
 
 Then(/^I should see an error "(.*?)"$/) do |error|
   expect(page).to have_content(error)
+end
+
+Given(/^I am logged in$/) do
+  visit "/auth/google_oauth2"
+end
+
+Given(/^I am not logged in$/) do
+  visit "/signout"
+end
+
+Then(/^I cannot create a question$/) do
+  expect(page).not_to have_content('Ask A Dev')
+  visit '/questions/new'
+  page.should_not have_xpath("//input[@name='question[title]']")
+  page.should_not have_xpath("//input[@name='question[description]']")
 end

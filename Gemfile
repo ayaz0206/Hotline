@@ -27,6 +27,13 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+gem 'figaro'
+
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+
+gem 'omniauth'
+gem "omniauth-google-oauth2"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -47,4 +54,7 @@ group :test, :development do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'launchy'
 end
+
+gem 'factory_girl'

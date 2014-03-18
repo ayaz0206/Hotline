@@ -8,7 +8,11 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    if current_user
+      @question = Question.new
+    else 
+      redirect_to root_path
+    end
   end
 
   def create
