@@ -6,7 +6,7 @@ Given(/^I am on the homepage$/) do
   visit root_path
 end
 
-Then(/^I should see a question title$/) do
+Then(/^I see a question title$/) do
   expect(page).to have_content("How do I install Devise?")
 end
 
