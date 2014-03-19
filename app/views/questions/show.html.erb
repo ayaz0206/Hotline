@@ -5,6 +5,7 @@
 <section>
 	<%= @question.title %> <br>
 	<%= render_question_description %> <br>
+	<a href='<%= @question.file_avatar.url %>'><%=@question.file_avatar_file_name%></a><br>
 	<%= @question.user.name %>
 </section>
 

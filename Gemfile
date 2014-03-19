@@ -33,6 +33,9 @@ gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
 gem 'omniauth'
 gem "omniauth-google-oauth2"
+gem 'paperclip'
+gem 'aws-sdk'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

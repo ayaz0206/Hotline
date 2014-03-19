@@ -27,10 +27,11 @@ class QuestionsController < ApplicationController
       render 'new'
     end
   end
+
   
   private
   def question_params
-    params.require(:question).permit(:title, :description)
+    params.require(:question).permit(:title, :description, :file_avatar)
   end
 
 end
