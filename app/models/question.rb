@@ -1,6 +1,8 @@
 class Question < ActiveRecord::Base
   validates_presence_of :title, :description
+  
   validate :file_size_validation
+
   has_many :responses
   belongs_to :user
 
@@ -10,6 +12,7 @@ class Question < ActiveRecord::Base
   private 
 
   def file_size_validation
+    return if file_avatar.blank?
     errors[:file_avatar] << "should be less than 1MB" if file_avatar.size > 1.megabytes
   end
 
