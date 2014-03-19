@@ -28,4 +28,5 @@ end
 
 Then(/^I see the google hangout buttons$/) do
   page.should have_xpath("//div[@class='g-hangout']")
+  page.should have_xpath("//div[@id='placeholder-div3']")
 end

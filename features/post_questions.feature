@@ -6,7 +6,8 @@ Feature: Post Questions
   	Scenario: A User can post questions
       And I am logged in
       And I click on "Ask A Dev"
-  		Then I can create a question 
+      Then I can see google hangout on air button
+  		And I can create a question 
   		And I can see the complete question detail with my fullname
   		And I see the message "Successfully Posted!"
       And I see the google hangout buttons

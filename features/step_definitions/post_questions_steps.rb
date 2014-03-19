@@ -4,7 +4,7 @@ end
 
 Then(/^I can create a question$/) do
   fill_in('question[title]', :with => 'How do I install Devise?')
-  fill_in('question[description]', :with => "Long Text..")
+  fill_in('question[description]', :with => "Devise description")
   click_button('Ask')
 end
 
@@ -18,7 +18,7 @@ Then(/^I see the message "(.*?)"$/) do |message|
 end
 
 Given(/^I only fill in the decription$/) do
-  fill_in('question[description]', :with => "Long Text..")
+  fill_in('question[description]', :with => "Devise description")
 end
 
 Given(/^I click "(.*?)"$/) do |button|
@@ -46,4 +46,8 @@ Then(/^I cannot create a question$/) do
   visit '/questions/new'
   page.should_not have_xpath("//input[@name='question[title]']")
   page.should_not have_xpath("//input[@name='question[description]']")
+end
+
+Then(/^I can see google hangout on air button$/) do
+  page.should have_xpath("//div[@id='placeholder-div3']")
 end
