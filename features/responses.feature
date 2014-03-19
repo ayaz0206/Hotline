@@ -10,6 +10,17 @@ Feature: Reply to questions
 			Then I click on a question title
 			And I reply to that question
 			Then I should see my response
+
+		Scenario: A User cannot submit an empty reply
+			And I am logged in
+			Then I click on a question title
+			And I reply with no response
+			Then I should see an error
+
+		Scenario: A User cannot reply if not logged in
+			And I am not logged in
+			And I click on a question title
+			Then I should not see the reply section
 		
 
 

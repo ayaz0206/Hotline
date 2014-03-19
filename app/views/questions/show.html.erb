@@ -8,13 +8,22 @@
 </section>
 
 <section>
-	<%= @responses %>
-</section>
-
-<section>
-	<%= form_tag response_path :method => :post do |f| %>
-		<%= text_area_tag(:response) %>
-		<input type='hidden' name='question_id' value='<%=@question.id%>'>  
-		<%= submit_tag("Reply") %>
+	<% @responses.each do |response| %>
+		<li> <%= response.response %></li>
 	<% end %>
 </section>
+
+<% if current_user %>
+	<section>
+		<%= form_tag response_path :method => :post do |f| %>
+			<% if flash[:errors] %>
+				<% flash[:errors].each do |errors| %>
+					<%= errors %>
+				<% end %>
+			<% end %>
+			<%= text_area_tag(:response) %>
+			<input type='hidden' name='question_id' value='<%=@question.id%>'>  
+			<%= submit_tag("Reply") %>
+		<% end %>
+	</section>
+<% end %>
