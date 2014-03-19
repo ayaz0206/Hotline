@@ -18,7 +18,7 @@
 
 <section>
 	<% @responses.each do |response| %>
-		<li> <%= response.response %> - <%= response.user.name %></li>
+		<li> <%= render_response(response) %> - <%= response.user.name %></li>
 	<% end %>
 </section>
 
