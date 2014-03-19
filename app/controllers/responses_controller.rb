@@ -2,6 +2,7 @@ class ResponsesController < ApplicationController
   def create
     @response = Response.new(response_params)
     @response.question = Question.find(params[:question_id].to_i)
+    @response.user = current_user
     if @response.save
       flash[:notice] = "Successfully Replied!"
       redirect_to question_path(@response.question)

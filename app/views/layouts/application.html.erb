@@ -8,7 +8,7 @@
 </head>
 <body>
 	<% if current_user %>
-		Welcome <%= current_user.name %> <br>
+		Hi, <%= current_user.first_name %> <br>
 		<a href='<%= new_question_path %>'>Ask A Dev</a>
 		<a href='<%= signout_path %>'> Sign Out </a>
 	<% else %>
@@ -18,5 +18,13 @@
 
 	<%= yield %>
 
+	<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
+	<script type="text/javascript">
+  gapi.hangout.render('placeholder-div3', {
+    'render': 'createhangout',
+    'hangout_type': 'onair',
+    'widget_size': 175
+  });
+</script>	
 </body>
 </html>

@@ -1,13 +1,20 @@
 Given(/^I create a question$/) do
-  Question.create(title: "How do I install Devise?", description: "Devise installation...")
+  visit root_path
+  visit "/auth/google_oauth2"
+  click_link('Ask A Dev') 
+  fill_in('question[title]', :with => 'How do I install Devise?')
+  fill_in('question[description]', :with => "Devise description")
+  click_button('Ask')
+  visit "/signout"
 end
 
 Given(/^I am on the homepage$/) do
   visit root_path
 end
 
-Then(/^I see a question title$/) do
+Then(/^I see a question title with questioners fullname$/) do
   expect(page).to have_content("How do I install Devise?")
+  expect(page).to have_content("Test Test")
 end
 
 Given(/^I click on a question title$/) do
@@ -15,5 +22,5 @@ Given(/^I click on a question title$/) do
 end
 
 Then(/^I should see the question description$/) do
-  expect(page).to have_content("Devise installation...")
+  expect(page).to have_content("Devise description")
 end

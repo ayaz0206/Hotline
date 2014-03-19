@@ -8,8 +8,9 @@ Then(/^I can create a question$/) do
   click_button('Ask')
 end
 
-Then(/^I can see the full question detail$/) do
+Then(/^I can see the complete question detail with my fullname$/) do
   expect(page).to have_content("How do I install Devise?")
+  expect(page).to have_content("Test Test")
 end
 
 Then(/^I see the message "(.*?)"$/) do |message|

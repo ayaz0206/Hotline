@@ -4,12 +4,21 @@
 
 <section>
 	<%= @question.title %> <br>
-	<%= @question.description %>
+	<%= @question.description %> <br>
+	<%= @question.user.name %>
 </section>
+
+<% if current_user %>
+	<section>
+		<div class="g-hangout" data-render="createhangout"></div>	
+		<div id="placeholder-div3"></div>
+	</section>
+<% end %>
+
 
 <section>
 	<% @responses.each do |response| %>
-		<li> <%= response.response %></li>
+		<li> <%= response.response %> - <%= response.user.name %></li>
 	<% end %>
 </section>
 

@@ -7,8 +7,10 @@ Feature: Post Questions
       And I am logged in
       And I click on "Ask A Dev"
   		Then I can create a question 
-  		And I can see the full question detail
+  		And I can see the complete question detail with my fullname
   		And I see the message "Successfully Posted!"
+      And I see the google hangout buttons
+
 
     Scenario: A User can't post questions when not logged in
       And I am not logged in
