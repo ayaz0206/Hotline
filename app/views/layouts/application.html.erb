@@ -1,30 +1,68 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Hotline</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<% if current_user %>
-		Hi, <%= current_user.first_name %> <br>
-		<a href='<%= new_question_path %>'>Ask A Dev</a>
-		<a href='<%= signout_path %>'> Sign Out </a>
-	<% else %>
-		<%= link_to 'Login with google', '/auth/google_oauth2' %>
-	<% end %>
+<html lang="en">
+  <head>
+  	<title>Hotline</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-	<%= yield %>
+ 		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <%= javascript_include_tag "vendor/modernizr" %>
+  	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-	<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
-	<script type="text/javascript">
-  gapi.hangout.render('placeholder-div3', {
-    'render': 'createhangout',
-    'hangout_type': 'onair',
-    'widget_size': 175
-  });
-</script>	
-</body>
+  <body>
+
+<div class="contain-to-grid sticky" data-options="sticky_on: large" >
+		<nav class="top-bar" data-topbar>
+		  <ul class="title-area">
+		    <li class="name">
+		      <h1><a href="<%= root_path %>">AskADev</a></h1>
+		    </li>
+		    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+		  </ul>
+
+		  <section class="top-bar-section">
+		    
+		    <!-- Right Nav Section -->
+		    <ul class="right">
+		      <% if current_user %>
+			      <li class="has-dropdown">
+							<a href="">Hi <%= current_user.first_name %> </a>
+			        <ul class="dropdown">
+			          <li><a href="#">Settings</a></li>
+			        </ul>
+			      </li>
+						<li> <a href='<%= signout_path %>'> Sign Out </a> </li>
+		      <% else %>
+		      	<li><%= link_to 'Sign in with google', '/auth/google_oauth2', {class: 'gsign-in'} %></li>
+		      <% end %>
+		    </ul>
+
+		  </section>
+		</nav>
+	</div>
+
+	<div class="row">
+  	<div class="large-8 columns"> <%= yield %> </div>
+		<div class="large-4 columns">Right bar </div>
+	</div>
+
+
+
+		<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
+		<script type="text/javascript">
+		  gapi.hangout.render('placeholder-div3', {
+		    'render': 'createhangout',
+		    'hangout_type': 'onair',
+		    'widget_size': 175
+		  });
+		</script>	
+
+  </body>
 </html>
+
+
+

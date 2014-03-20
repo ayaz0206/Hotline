@@ -1,39 +1,40 @@
-<% if flash[:notice] %>
-	<%= flash[:notice] %>
-<% end %>
 
-<section>
-	<%= @question.title %> <br>
-	<%= render_question_description %> <br>
-	<a href='<%= @question.file_avatar.url %>'><%=@question.file_avatar_file_name%></a><br>
-	<%= @question.user.name %>
-</section>
-
-<% if current_user %>
-	<section>
-		<div class="g-hangout" data-render="createhangout"></div>	
-		<div id="placeholder-div3"></div>
-	</section>
-<% end %>
-
-
-<section>
-	<% @responses.each do |response| %>
-		<li> <%= render_response(response) %> - <%= response.user.name %></li>
+	<% if flash[:notice] %>
+		<%= flash[:notice] %>
 	<% end %>
-</section>
 
-<% if current_user %>
 	<section>
-		<%= form_tag response_path :method => :post do |f| %>
-			<% if flash[:errors] %>
-				<% flash[:errors].each do |errors| %>
-					<%= errors %>
-				<% end %>
-			<% end %>
-			<%= text_area_tag(:response) %>
-			<input type='hidden' name='question_id' value='<%=@question.id%>'>  
-			<%= submit_tag("Reply") %>
+		<%= @question.title %> <br>
+		<%= render_question_description %> <br>
+		<a href='<%= @question.file_avatar.url %>'><%=@question.file_avatar_file_name%></a><br>
+		<%= @question.user.name %>
+	</section>
+
+	<% if current_user %>
+		<section>
+			<div class="g-hangout" data-render="createhangout"></div>	
+			<div id="placeholder-div3"></div>
+		</section>
+	<% end %>
+
+
+	<section>
+		<% @responses.each do |response| %>
+			<li> <%= render_response(response) %> - <%= response.user.name %></li>
 		<% end %>
 	</section>
-<% end %>
+
+	<% if current_user %>
+		<section>
+			<%= form_tag response_path :method => :post do |f| %>
+				<% if flash[:errors] %>
+					<% flash[:errors].each do |errors| %>
+						<%= errors %>
+					<% end %>
+				<% end %>
+				<%= text_area_tag(:response) %>
+				<input type='hidden' name='question_id' value='<%=@question.id%>'>  
+				<%= submit_tag("Reply") %>
+			<% end %>
+		</section>
+	<% end %>

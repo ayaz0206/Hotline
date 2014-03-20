@@ -1,7 +1,8 @@
 Hotline::Application.routes.draw do
   
+  
   root "questions#index"
-
+  
   resources :questions
   
   get "users/create"
