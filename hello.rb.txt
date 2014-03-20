@@ -1,0 +1,11 @@
+def my_car
+  puts 'is nice'
+end
+
+def your_car
+  "sucks"
+end
+
+def which_car_is_better?
+  puts 'my car'
+end

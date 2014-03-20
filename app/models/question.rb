@@ -7,10 +7,9 @@ class Question < ActiveRecord::Base
   belongs_to :user
 
   has_attached_file :file_avatar, :default_url => "/files/:style/missing.doc"
-  do_not_validate_attachment_file_type :file_avatar
-
+  validates_attachment_content_type :file_avatar, :content_type => ['application/zip', /application/, /text/]
+  
   private 
-
   def file_size_validation
     return if file_avatar.blank?
     errors[:file_avatar] << "should be less than 1MB" if file_avatar.size > 1.megabytes
