@@ -1,5 +1,7 @@
 Given(/^I visit my profile page$/) do
-  click_on('My Profile')
+  # click_link('My Profile')
+
+  visit 'users/1'
 
 end
 
