@@ -1,10 +1,10 @@
 Given(/^I visit my profile page$/) do
   click_on('My Profile')
+
 end
 
 Then(/^I should see my profile$/) do
-  expect(page).to have_content(user.name)
-  expect(page).to have_content(user.email)
+  expect(page).to have_content('Test')
 
 end
 

@@ -1,12 +1,14 @@
-<h1> My Profile </h1>
+<h3> My Profile </h3>
 
-<% current_user.user.name %>
-<% current_user.email %>
+<%= @profile_user.first_name %><br>
+<%= @profile_user.email %><br>
 
-<h2> My questions </h2>
 
-<% if @questions.title.count > 0 %>
-	<ul><%= render_question_description %></ul> <br>
-	<% else %>
-	<p>You have no questions.</p>
-	<% end %> 
+
+
+
+<h3> My questions </h3>
+
+<% @profile_user.questions.each do |question| %>
+	<a href='<%= question_path(question) %>'><br><%= question.title %></a>
+<% end %>

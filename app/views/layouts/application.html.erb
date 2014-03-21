@@ -33,7 +33,7 @@
 							<a href="">Hi <%= current_user.first_name %> </a>
 			        <ul class="dropdown">
 			          <li><a href="#">Settings</a></li>
-			          <li><a href="#">My Profile</a></li>
+			          <li><a href='/users/<%= current_user.id %>'> My Profile </a></li>
 								<li> <a href='<%= signout_path %>'> Sign Out </a> </li>
 			        </ul>
 			      </li>
