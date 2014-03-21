@@ -1,23 +1,27 @@
 
 
-	<section>
-		<%= @question.title %> <br>
+	<section class='question'>
+		<h2><%= @question.title %> </h2><br>
 		<%= render_question_description %> <br>
 		<a href='<%= @question.file_avatar.url %>'><%=@question.file_avatar_file_name%></a><br>
-		<%= @question.user.name %>
+		<span class='username'> <%= @question.user.name %> </span> <br>
+		<span class='username'> Asked on: <%= @question.created_at %> </span>
+
+			<section class='hangout'>
+		<% if current_user %>
+				<h4> Know the answer? </h4>
+				<div class="g-hangout" data-render="createhangout"></div>	
+				<div id="placeholder-div3"></div>
+		<% end %>
+			</section>
 	</section>
 
-	<% if current_user %>
-		<section>
-			<div class="g-hangout" data-render="createhangout"></div>	
-			<div id="placeholder-div3"></div>
-		</section>
-	<% end %>
 
-
-	<section>
+	<section class='response-feed'>
 		<% @responses.each do |response| %>
-			<li> <%= render_response(response) %> - <%= response.user.name %></li>
+			<li> <%= render_response(response) %> <br> 
+			<span class='username'><%= response.user.name %></span> <br>
+			<span class='username'>Replied on: <%= response.created_at %></span></li>
 		<% end %>
 	</section>
 
