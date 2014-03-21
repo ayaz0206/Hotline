@@ -6,4 +6,8 @@
 	.small-9 {
 		width: 100%;
 	}
+
+	.inner-tab {
+		visibility: hidden;
+	}
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */

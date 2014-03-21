@@ -26,9 +26,9 @@ margin: 0 auto;
 margin-bottom: 0;
 }
 
+.response-feed li,
 .home-feed ul li {
 	list-style:none;
-	padding: 10px 0px 0px 0px;
 	border-bottom: 1px solid #DDD;
 }
 
@@ -57,12 +57,38 @@ margin-bottom: 0;
 
 .inner-tab{
 	margin: 1em;
+	text-align: center;
 }
 
 .inner-tab a{
-	margin-left: 7em;
-	padding: 10px;
+	margin-left: 2em;
+	padding: 0px 10px 5px 10px;
+	color: #555;
+	font-size: 18px;
+	font-weight: 600;
+	border-bottom: 5px solid #aaa;
+	-webkit-transition: border-bottom 0.2s; /* For Safari 3.1 to 6.0 */
+	transition: border-bottom 0.2s;
 }
+
+.inner-tab a:hover{
+	color: #777;
+	border-bottom: 8px solid #f90;
+}
+
+.main-inner {
+	padding: 2em;
+}
+
+.response-feed li{
+	padding: 10px 0px 20px 40px;
+}
+
+.question .hangout{
+	border-bottom: 10px solid #ccc;
+	padding-bottom: 20px;
+}
+
 
 
 
