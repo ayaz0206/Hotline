@@ -42,7 +42,7 @@ Given(/^I am not logged in$/) do
 end
 
 Then(/^I cannot create a question$/) do
-  expect(page).not_to have_content('Ask A Dev')
+  expect(page).not_to have_content('Ask Question')
   visit '/questions/new'
   page.should_not have_xpath("//input[@name='question[title]']")
   page.should_not have_xpath("//input[@name='question[description]']")
