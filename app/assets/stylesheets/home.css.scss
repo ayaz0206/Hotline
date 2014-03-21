@@ -1,6 +1,23 @@
+.top-bar {
+	background: #fff;
+	padding: 10px;
+}
+
+.top-bar .name h1 a{
+	color: black;
+	font-size: 2em;
+}
+
+.top-bar-section .has-form {
+	background: #fff;
+}
 
 .top-bar-section li:not(.has-form) a:not(.button) {
 	background: #d14836;
+}
+
+.contain-to-grid {
+	background: #fff;
 }
 
 .contain-to-grid .top-bar {
@@ -9,8 +26,43 @@ margin: 0 auto;
 margin-bottom: 0;
 }
 
-.homeFeed ul li {
+.home-feed ul li {
 	list-style:none;
+	padding: 10px 0px 0px 0px;
+	border-bottom: 1px solid #DDD;
+}
+
+.right-bar {
+	border: 2px solid black;
+	height: 200px;
+	margin-top: 5em;;
+}
+
+.main-body {
+}
+
+.username {
+	font-size: 12px;
+	float: right;
+	padding-right: 10px;
+}
+
+.top-bar input {
+	width: 15em;
+}
+
+.container {
+	margin-top: 20px;
+}
+
+.inner-tab{
+	margin: 1em;
+}
+
+.inner-tab a{
+	margin-left: 7em;
 	padding: 10px;
 }
+
+
 

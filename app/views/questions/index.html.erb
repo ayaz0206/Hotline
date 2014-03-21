@@ -1,8 +1,12 @@
 
-	<section class='homeFeed'>
+	<section class='home-feed'>
 		<ul>
 		<% @questions.each do |question| %>
-			<li> <a href ="questions/<%= question.id %>">  <%= question.title %> </a> <%= question.user.name %> </li>
+			<li> 
+				<a href ="questions/<%= question.id %>">  <%= question.title %> </a>  <br>
+				<span class='username'> <%= question.user.name %> </span> <br>
+				<span class='username'> Asked on: <%= question.created_at %> </span> <br>
+			</li>
 		<% end %> 
 		</ul>
 </section>

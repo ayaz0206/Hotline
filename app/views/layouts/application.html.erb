@@ -15,7 +15,7 @@
 
   <body>
 
-<div class="contain-to-grid sticky" data-options="sticky_on: large" >
+	<div class="contain-to-grid sticky" data-options="sticky_on: large" >
 		<nav class="top-bar" data-topbar>
 		  <ul class="title-area">
 		    <li class="name">
@@ -33,22 +33,58 @@
 							<a href="">Hi <%= current_user.first_name %> </a>
 			        <ul class="dropdown">
 			          <li><a href="#">Settings</a></li>
+								<li> <a href='<%= signout_path %>'> Sign Out </a> </li>
 			        </ul>
 			      </li>
-						<li> <a href='<%= signout_path %>'> Sign Out </a> </li>
 		      <% else %>
 		      	<li><%= link_to 'Sign in with google', '/auth/google_oauth2', {class: 'gsign-in'} %></li>
 		      <% end %>
 		    </ul>
 
+		    <!-- Left Nav Section -->
+	    <ul class="left">
+				<li class="has-form">
+				  <div class="row collapse">
+				    <div class="large-8 small-8 columns">
+				      <input type="text" placeholder="Search...">
+				    </div>
+				    <div class="large-4 small-4 columns">
+				      <a href="#" class="active button expand">Search</a>
+				    </div>
+				  </div>
+				</li>    
+			</ul>
+
 		  </section>
 		</nav>
 	</div>
 
-	<div class="row">
-  	<div class="large-8 columns"> <%= yield %> </div>
-		<div class="large-4 columns">Right bar </div>
+
+
+	<div class='container'>
+		<% if flash[:notice] %>
+			<%= flash[:notice] %>
+		<% end %>
+		<div class="row">
+	  	<div class="small-9 large-9 columns"> 
+	  		<section class='main-body'>
+					<section class='inner-tab'>
+						<a> Questions </a>
+						<a> Solved </a>
+						<a> Live Sessions </a>
+					</section>
+	  			<%= yield %> 
+	  		</section>
+	  	</div>
+			
+			<div class="small-3 large-3 columns">
+				<section class='right-bar'>
+					Right bar 
+				</section>
+			</div>
+		</div>
 	</div>
+
 
 
 
