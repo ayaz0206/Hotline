@@ -37,16 +37,22 @@
 			        </ul>
 			      </li>
 		      <% else %>
-		      	<li><%= link_to 'Sign in with google', '/auth/google_oauth2', {class: 'gsign-in'} %></li>
+		      	<li><%= link_to image_tag('g.png') + "Sign in with google", '/auth/google_oauth2', {class: 'gsign-in'} %></li>
 		      <% end %>
 		    </ul>
 
+		    <div class='right extra-btn'>
+			  	<a href="#" data-reveal-id="myModal" data-reveal>About</a>
+		      <% if current_user %>
+						<a href='<%= new_question_path%>' class='button'> Ask Question </a>
+					<% end %>
+			  </div>
 		    <!-- Left Nav Section -->
 	    <ul class="left">
 				<li class="has-form">
 				  <div class="row collapse">
 				    <div class="large-8 small-8 columns">
-				      <input type="text" placeholder="Search...">
+				      <input type="text" placeholder="Discover...">
 				    </div>
 				    <div class="large-4 small-4 columns">
 				      <a href="#" class="active button expand">Search</a>
@@ -62,14 +68,14 @@
 
 
 	<div class='container'>
-		<% if flash[:notice] %>
-			<%= flash[:notice] %>
-		<% end %>
 		<div class="row">
 	  	<div class="small-9 large-9 columns"> 
 	  		<section class='main-body'>
+					<% if flash[:notice] %>
+						<%= flash[:notice] %>
+					<% end %>
 					<section class='inner-tab'>
-						<a> Questions </a>
+						<a href='<%= root_path %>'> Questions </a>
 						<a> Solved </a>
 						<a> Live Sessions </a>
 					</section>
@@ -87,7 +93,24 @@
 		</div>
 	</div>
 
-
+	<div id="myModal" class="reveal-modal" data-reveal>
+  	<h2>About</h2>
+  	<section class='modal-container'>
+	  	<section class='about-info'>
+	  		<h4>What</h4>
+	  		<p> Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! </p>
+	  	</section>
+	  	<section class='about-info'>
+	  		<h4>How</h4>
+	  		<p> In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero.  </p>
+	  	</section>
+	  	<section class='about-info'>
+	  		<h4>Shit.</h4>
+	  		<p> The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. </p>
+	  	</section>
+	  </section>
+  	<a class="close-reveal-modal">&#215;</a>
+	</div>
 
 
 		<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>

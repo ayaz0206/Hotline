@@ -2,7 +2,7 @@
 
 	<section class='question'>
 		<h2><%= @question.title %> </h2><br>
-		<%= render_question_description %> <br>
+		<p> <%= render_question_description %> </p>
 		<a href='<%= @question.file_avatar.url %>'><%=@question.file_avatar_file_name%></a><br>
 		<span class='username'> <%= @question.user.name %> </span> <br>
 		<span class='username'> Asked on: <%= @question.created_at %> </span>
@@ -26,16 +26,17 @@
 	</section>
 
 	<% if current_user %>
-		<section>
+		<section class='reply'>
 			<%= form_tag response_path :method => :post do |f| %>
 				<% if flash[:errors] %>
 					<% flash[:errors].each do |errors| %>
-						<%= errors %>
+						<%= errors %> 
 					<% end %>
 				<% end %>
-				<%= text_area_tag(:response) %>
+				
+				<%= text_area_tag(:response, nil, placeholder: 'Make their life easier...')%>
 				<input type='hidden' name='question_id' value='<%=@question.id%>'>  
-				<%= submit_tag("Reply") %>
+				<%= submit_tag("Reply", {class: 'active button'}) %>
 			<% end %>
 		</section>
 	<% end %>

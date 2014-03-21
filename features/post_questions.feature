@@ -5,7 +5,7 @@ Feature: Post Questions
 
   	Scenario: A User can post questions
       And I am logged in
-      And I click on "Ask A Dev"
+      And I click on "Ask Question"
       Then I can see google hangout on air button
   		And I can create a question 
   		And I can see the complete question detail with my fullname
@@ -19,14 +19,14 @@ Feature: Post Questions
 
   	Scenario: A User submits a question without title
       And I am logged in
-      And I click on "Ask A Dev"
+      And I click on "Ask Question"
   		And I only fill in the decription
       And I click "Ask" 
       Then I should see an error "Title can't be blank"
     
     Scenario: A User submits a question without description
       And I am logged in
-      And I click on "Ask A Dev"
+      And I click on "Ask Question"
       And I only fill in the title
       And I click "Ask" 
       Then I should see an error "Description can't be blank"

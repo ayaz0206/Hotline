@@ -1,7 +1,7 @@
 Given(/^I create a question$/) do
   visit root_path
   visit "/auth/google_oauth2"
-  click_link('Ask A Dev') 
+  click_link('Ask Question') 
   fill_in('question[title]', :with => 'How do I install Devise?')
   fill_in('question[description]', :with => "Devise description")
   click_button('Ask')
