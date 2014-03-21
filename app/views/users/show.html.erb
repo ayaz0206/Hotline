@@ -1,0 +1,12 @@
+<h1> My Profile </h1>
+
+<% current_user.user.name %>
+<% current_user.email %>
+
+<h2> My questions </h2>
+
+<% if @questions.title.count > 0 %>
+	<ul><%= render_question_description %></ul> <br>
+	<% else %>
+	<p>You have no questions.</p>
+	<% end %> 
