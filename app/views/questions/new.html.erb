@@ -3,9 +3,10 @@
 	<%= form_for @question, :html => { :multipart => true } do |f| %>
 
 		<% if flash[:errors] %>
-			<% flash[:errors].each do |errors| %>
-				<li> <%= errors %> </li>
-			<% end %> 
+			<div data-alert class="alert-box warning radius">
+				<%=flash[:errors].first %>
+  			<a href="#" class="close">&times;</a>
+			</div>
 		<% end %>
 		
 		<%= f.text_field :title %> <br>

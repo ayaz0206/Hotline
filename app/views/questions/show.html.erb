@@ -29,10 +29,11 @@
 		<section class='reply'>
 			<%= form_tag response_path :method => :post do |f| %>
 				<% if flash[:errors] %>
-					<% flash[:errors].each do |errors| %>
-						<%= errors %> 
-					<% end %>
-				<% end %>
+					<div data-alert class="alert-box warning radius">
+						<%= flash[:errors].first %> 
+  					<a href="#" class="close">&times;</a>
+					</div>
+				<% end %>	
 				
 				<%= text_area_tag(:response, nil, placeholder: 'Make their life easier...')%>
 				<input type='hidden' name='question_id' value='<%=@question.id%>'>  
