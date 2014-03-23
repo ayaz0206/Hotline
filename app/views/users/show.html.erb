@@ -1,11 +1,11 @@
-<h3> My Profile </h3>
 
-<%= @profile_user.first_name %><br>
-<%= @profile_user.email %><br>
-<img width="100" height="100" src= "<%= @profile_user.image %> ">
+<img class='profile-img' src= "<%= @profile_user.image %> ">
+<h2> <%= @profile_user.name %></h2><br>
 
-<h3> My questions </h3>
+<section class='profile-questions'>
+	<h3> Questions Asked:</h3>
 
-<% @profile_user.questions.each do |question| %>
-	<a href='<%= question_path(question) %>'><br><%= question.title %></a>
-<% end %>
+	<% @profile_user.questions.each do |question| %>
+		<a href='<%= question_path(question) %>'><br><%= question.title %></a>
+	<% end %>
+</section>

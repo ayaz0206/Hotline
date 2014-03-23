@@ -4,7 +4,8 @@
 		<% @questions.each do |question| %>
 			<li> 
 				<a href ="questions/<%= question.id %>">  <%= question.title %> </a>  <br>
-				<span class='username'> <%= question.user.name %> </span> <br>
+		<span class='username'><a href='<%= user_path(question.user)%>'> <%= question.user.name %> </a></span> <br>
+
 				<span class='username'> Asked on: <%= question.created_at %> </span> <br>
 			</li>
 		<% end %> 

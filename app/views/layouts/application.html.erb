@@ -43,7 +43,7 @@
 		    </ul>
 
 		    <div class='right extra-btn'>
-			  	<a href="#" data-reveal-id="myModal" data-reveal>About</a>
+			  	<a href="#" class='about' data-reveal-id="myModal" data-reveal>About</a>
 		      <% if current_user %>
 						<a href='<%= new_question_path%>' class='button'> Ask Question </a>
 					<% end %>
@@ -52,12 +52,14 @@
 	    <ul class="left">
 				<li class="has-form">
 				  <div class="row collapse">
+				  <span class='search'>
 				    <div class="large-8 small-8 columns">
 				      <input type="text" placeholder="Discover...">
 				    </div>
 				    <div class="large-4 small-4 columns">
 				      <a href="#" class="active button expand">Search</a>
 				    </div>
+				    </span>
 				  </div>
 				</li>    
 			</ul>
@@ -73,7 +75,10 @@
 	  	<div class="small-9 large-9 columns"> 
 	  		<section class='main-body'>
 					<% if flash[:notice] %>
-						<%= flash[:notice] %>
+	  				<div data-alert class="alert-box success radius">
+							<%= flash[:notice] %>
+  						<a href="#" class="close">&times;</a>
+						</div>
 					<% end %>
 					<section class='inner-tab'>
 						<a href='<%= root_path %>'> Questions </a>
