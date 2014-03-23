@@ -8,5 +8,4 @@ end
 
 Then(/^I should see questions I posted$/) do
   expect(page).to have_content("How do I install Devise?")
-  save_and_open_page
 end
