@@ -6,7 +6,7 @@
 				<a href ="questions/<%= question.id %>">  <%= question.title %> </a>  <br>
 		<span class='username'><a href='<%= user_path(question.user)%>'> <%= question.user.name %> </a></span> <br>
 
-				<span class='username'> Asked on: <%= question.created_at %> </span> <br>
+				<span class='username'> <%= timeago_tag question.created_at, :nojs => true, :limit => 10.days.ago %> </span> <br>
 			</li>
 		<% end %> 
 		</ul>

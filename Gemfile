@@ -38,6 +38,8 @@ gem 'aws-sdk'
 
 gem 'foundation-rails'
 
+gem 'rails-timeago', '~> 2.0'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

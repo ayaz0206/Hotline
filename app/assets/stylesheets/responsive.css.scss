@@ -1,6 +1,6 @@
-@media only screen and (max-width: 47em) { 
+@media only screen and (max-width: 60em) { 
 	.right-bar {
-		visibility: hidden;
+		display: none;
 	}
 
 	.small-9 {
@@ -24,7 +24,7 @@
 	}
 
 	.top-bar .name img{
-		height: 40px;
+		height: 55px;
 		padding-right: 8px;
 	}
 
@@ -41,8 +41,8 @@
 		background: #fff;
 	}
 
-	.top-bar-section ul li > a {
-		margin-top: 20px;
+	.top-bar-section{
+		margin-top: 5px;
 	}
 
 	.top-bar-section ul {

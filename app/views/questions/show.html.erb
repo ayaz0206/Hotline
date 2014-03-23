@@ -5,7 +5,7 @@
 		<p> <%= render_question_description %> </p>
 		<a href='<%= @question.file_avatar.url %>'><%=@question.file_avatar_file_name%></a><br>
 		<span class='username'><a href='<%= user_path(@question.user)%>'> <%= @question.user.name %> </a></span> <br>
-		<span class='username'> Asked on: <%= @question.created_at %> </span>
+		<span class='username'> <%= timeago_tag @question.created_at, :nojs => true, :limit => 10.days.ago %> </span>
 
 			<section class='hangout'>
 		<% if current_user %>
@@ -21,7 +21,7 @@
 		<% @responses.each do |response| %>
 			<li> <%= render_response(response) %> <br> 
 			<span class='username'><a href='<%= user_path(response.user)%>'><%= response.user.name %></a></span> <br>
-			<span class='username'>Replied on: <%= response.created_at %></span></li>
+			<span class='username'><%= timeago_tag response.created_at, :nojs => true, :limit => 10.days.ago %></span></li>
 		<% end %>
 	</section>
 
