@@ -16,6 +16,24 @@ class QuestionsController < ApplicationController
     end
   end
 
+
+    def edit
+      # any user can edit these questions
+    if current_user
+      @question = Question.find(params[:id])
+    else 
+      redirect_to root_path
+    end
+  end
+
+    def update
+      @question = Question.find(params[:id])
+      @question.title = params[:question][:title]
+      @question.description = params[:question][:description]
+      @question.save
+      redirect_to question_path(@question)
+    end
+
   def create
     @question = Question.new(question_params)
     @question.user = current_user

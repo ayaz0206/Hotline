@@ -1,6 +1,7 @@
 
 
 	<section class='question'>
+		<%= link_to "edit", edit_question_path(@question)  %>
 		<h2><%= @question.title %> </h2><br>
 		<p> <%= render_question_description %> </p>
 		<a href='<%= @question.file_avatar.url %>'><%=@question.file_avatar_file_name%></a><br>
