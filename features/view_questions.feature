@@ -10,3 +10,7 @@ Feature: View Questons
   Scenario: A User can see the description of a question  
     And I click on a question title
     Then I should see the question description
+
+  Scenario: A User can see questions in reverse chronological order
+  	And I create second question
+  	Then I should see questions in reverse chronological order
