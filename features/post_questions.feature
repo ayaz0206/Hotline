@@ -31,4 +31,10 @@ Feature: Post Questions
       And I click "Ask" 
       Then I should see an error "Description can't be blank"
 
+    Scenario: A User can post questions with tags
+      And I am logged in
+      And I click on "Ask Question"
+      And I create a question with tags
+      Then I should see the question with tags
+
 

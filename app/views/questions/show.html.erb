@@ -3,6 +3,9 @@
 	<section class='question'>
 		<h2><%= @question.title %> </h2><br>
 		<p> <%= render_question_description %> </p>
+		<% @question.tag_list.each do |tag| %>
+			<%= tag %>
+		<% end %>
 		<a href='<%= @question.file_avatar.url %>'><%=@question.file_avatar_file_name%></a><br>
 		<span class='username'><a href='<%= user_path(@question.user)%>'> <%= @question.user.name %> </a></span> <br>
 		<span class='username'> <%= timeago_tag @question.created_at, :nojs => true, :limit => 10.days.ago %> </span>

@@ -51,3 +51,14 @@ end
 Then(/^I can see google hangout on air button$/) do
   page.should have_xpath("//div[@id='placeholder-div3']")
 end
+
+Given(/^I create a question with tags$/) do
+  fill_in('question[title]', :with => 'How do I install Devise?')
+  fill_in('question[description]', :with => "Devise description")
+  fill_in('question_tag_list', :with => "install, devise, rails, gem")
+  click_button('Ask')end
+
+Then(/^I should see the question with tags$/) do
+  expect(page).to have_content("How do I install Devise?")
+  expect(page).to have_content('gem')
+end
