@@ -35,7 +35,9 @@ class QuestionsController < ApplicationController
     end
 
   def create
+    tag_list = params[:question][:tag_list]
     @question = Question.new(question_params)
+    @question.tag_list = tag_list
     @question.user = current_user
     if @question.save
       flash[:notice] = "Successfully Posted!"

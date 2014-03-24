@@ -40,6 +40,10 @@ gem 'foundation-rails'
 
 gem 'rails-timeago', '~> 2.0'
 
+gem 'acts-as-taggable-on'
+
+gem "jquery-ui-rails"
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
