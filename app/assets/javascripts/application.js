@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require foundation
+//= require inputosaurus
 //= require rails-timeago
 // require turbolinks
 //= require_tree .
@@ -20,4 +22,7 @@
 
 $(function(){ 
 	$(document).foundation(); 
+	$('#widget1').inputosaurus({
+    width : '250px'
+	});
 });

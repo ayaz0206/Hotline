@@ -55,7 +55,7 @@ end
 Given(/^I create a question with tags$/) do
   fill_in('question[title]', :with => 'How do I install Devise?')
   fill_in('question[description]', :with => "Devise description")
-  fill_in('question_tag_list', :with => "install, devise, rails, gem")
+  fill_in('question[tag_list]', :with => "install, devise, rails, gem")
   click_button('Ask')end
 
 Then(/^I should see the question with tags$/) do
