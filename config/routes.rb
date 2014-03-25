@@ -13,4 +13,6 @@ Hotline::Application.routes.draw do
 
   get 'users/:id' => "users#show", as: "user"
 
+  post "responses/mark_answer", as: "mark_answer"
+
 end
