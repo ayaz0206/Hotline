@@ -1,11 +1,23 @@
-
-<img class='profile-img' src= "<%= @profile_user.image %> ">
-<h2> <%= @profile_user.name %></h2><br>
-
 <section class='profile-questions'>
 	<h3> Questions Asked</h3>
+<div class="row">
+  <div class="large-4 columns">
+		<img src= "<%= @profile_user.image %> ">
+		<h4> <strong><%= @profile_user.name %></strong></h4>
+		<p> Joined on <%= @profile_user.created_at %></p>
+  </div>
 
-	<% @profile_user.questions.each do |question| %>
-		<a href='<%= question_path(question) %>'><br><%= question.title %></a>
-	<% end %>
-</section>
+  <div class="large-8 columns">
+  	<section class='profile-questions'>
+			<h3> Questions Asked:</h3>
+			<ol>
+				<% @profile_user.questions.each do |question| %>
+					<li><a href='<%= question_path(question) %>'><%= question.title %></a></li>
+				<% end %>
+			</ol>
+		</section>
+  </div>
+</div>
+
+
+

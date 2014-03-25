@@ -129,16 +129,6 @@ margin-bottom: 0;
 	line-height: 33px;
 }
 
-.profile-img {
-	height: 200px;
-	float: left;
-}
-
-.profile-questions {
-	float: left;
-	width: 100%;
-}
-
 .alert-box {
 	margin-top: 30px;
 }
@@ -151,10 +141,16 @@ margin-bottom: 0;
 	margin-top: 10px;
 }
 
-
-
 .tags-field {
 	border: none;
+}
+
+.label.secondary{
+	font-size: 12px;
+}
+
+.profile-questions a{
+	line-height: 2.5em;
 }
 
 
