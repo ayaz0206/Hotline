@@ -1,5 +1,4 @@
-
-
+<div class="medium-8 columns">
 	<%= form_for @question, :html => { :multipart => true } do |f| %>
 
 		<% if flash[:errors] %>
@@ -8,7 +7,7 @@
   			<a href="#" class="close">&times;</a>
 			</div>
 		<% end %>
-		
+
 		<%= f.text_field :title %> <br>
 		<%= f.text_area :description%> <br>
 		
@@ -17,7 +16,38 @@
 		<div id="placeholder-div3"></div> <br><br>
 	  <%= f.file_field :file_avatar %>
 
-
 		<%= f.submit("Ask", {class: 'active button'}) %>
 
 	<% end %>
+
+</div>
+<div class="medium-4 columns">
+	<section class='right-bar'>
+		
+		<p><strong>How To</strong></p>
+
+		<p><strong>Click Hangouts on Air button</strong></strong><br>
+			After the window opens click the button below to select the screen with your code to screenshare. <br>
+
+		<%= image_tag('Screenshare.png', size: "50")%><br>
+
+		<strong>Before recording</strong><br>
+			Copy the Embed Video link which you’ll find by clicking the ‘Links’ icon in the bottom right corner. Paste it into ‘Your Video Question box’ where you posted your question. <br>
+
+		<%=image_tag('Links.png', size: "80")%><br>
+
+		<strong>Ready to record</strong><br>
+			Air may take a few seconds to prepare. When it’s ready you’ll see this at the bottom of the screen. Click when ready to broadcast!<br>
+
+		<%=image_tag('Start.png', size: "150")%><br>
+
+		<strong>End recording</strong><br>  
+			After clicking you’ll “Start Broadcast” you’ll see the button below. Click again to stop broadcasting.<br> 
+
+		<%=image_tag('Stop.png', size: "150")%><br>
+
+			Sit back and relax, help is on the way! While you wait check out some questions and see if you can help.<br>
+			</p>
+
+	</section>
+</div>

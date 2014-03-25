@@ -48,8 +48,10 @@ margin-bottom: 0;
 
 .right-bar {
 	border: 2px solid black;
-	height: 200px;
-	margin-top: 5em;;
+}
+
+.right-bar p {
+	font-size: 0.8rem;
 }
 
 .main-body {

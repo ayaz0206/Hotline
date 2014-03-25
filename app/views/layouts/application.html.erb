@@ -85,18 +85,20 @@
 						<a> Solved </a>
 						<a> Live Sessions </a>
 					</section>
-					<section class='main-inner'>
-	  				<%= yield %> 
-	  			</section>
 	  		</section>
 	  	</div>
 			
-			<div class="small-3 large-3 columns">
-				<section class='right-bar'>
+			<!-- <div class="small-3 large-3 columns">
+				<section class='right-bar'>  
 					
 				</section>
-			</div>
+			</div> -->
 		</div>
+		<div class="row">
+			<section class='main-inner'>
+	  		<%= yield %> 				
+	  	</section>
+	  </div>
 	</div>
 
 	<div id="myModal" class="reveal-modal" data-reveal>
