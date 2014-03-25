@@ -6,10 +6,6 @@ When(/^I click on the edit link$/) do
   click_link("edit")
 end
 
-Given(/^I am on the edit page$/) do
-  visit('/questions/1/edit')
-end
-
 When(/^I edit the title content$/) do
   fill_in('question[title]', :with => "Editing text")
 end
