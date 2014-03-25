@@ -20,9 +20,23 @@
 //= require_tree .
 
 
+function submitAnswer() {
+	$('.correct-ans').click(function(event){
+		var response = $(this).data('id');
+		var question = $(this).data('question');
+		$.post('/responses/mark_answer', {response: response, question_id: question});
+		location.reload();
+		event.preventDefault();
+	});
+}
+
+
 $(function(){ 
 	$(document).foundation(); 
 	$('#widget1').inputosaurus({
     width : '250px'
 	});
+
+	submitAnswer();
+
 });

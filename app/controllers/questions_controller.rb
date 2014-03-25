@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find_by_id(params[:id])
-    @responses = Response.where("question_id = '#{params[:id]}'")
+    @responses = Response.where("question_id = '#{params[:id]}'").order(correct: :desc)
   end
 
   def new
