@@ -1,6 +1,5 @@
-
-
 	<section class='question'>
+		<%= link_to "edit", edit_question_path(@question)  %>
 		<h2><%= @question.title %> </h2><br>
 		<p> <%= render_question_description %> </p>
 		<% @question.tag_list.each do |tag| %>
