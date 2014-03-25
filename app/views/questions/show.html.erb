@@ -1,3 +1,5 @@
+<div class="medium-8 columns">
+
 	<section class='question'>
 		<%= link_to "edit", edit_question_path(@question)  %>
 		<h2><%= @question.title %> </h2><br>
@@ -43,3 +45,38 @@
 			<% end %>
 		</section>
 	<% end %>
+
+</div>
+	<div class="medium-4 columns">
+	<section class='right-bar'>
+		
+		<p><strong>How To Answer</strong></p>
+
+		<p><strong>Download the attached code</strong><br>
+		Download the attached code and have it open in your text editor, 			ready to screenshare for your screencast reply. 
+
+		<p><strong>Click Hangouts on Air button</strong><br>
+			After the window opens click the button below to select the screen with your code to screenshare. <br>
+
+		<%= image_tag('Screenshare.png', size: "50")%><br>
+
+		<strong>Before recording</strong><br>
+			Copy the Embed Video link which you’ll find by clicking the ‘Links’ icon in the bottom right corner. Paste it in a reply. <br>
+
+		<%=image_tag('Links.png', size: "80")%><br>
+
+		<strong>Ready to record</strong><br>
+			Air may take a few seconds to prepare. When it’s ready you’ll see this at the bottom of the screen. Click when ready to broadcast!<br>
+
+		<%=image_tag('Start.png', size: "150")%><br>
+
+		<strong>End recording</strong><br>  
+			After clicking you’ll “Start Broadcast” you’ll see the button below. Click again to stop broadcasting.<br> 
+
+		<%=image_tag('Stop.png', size: "150")%><br>
+
+			Wait for your big thank you! <br>
+			</p>
+
+	</section>
+</div>
