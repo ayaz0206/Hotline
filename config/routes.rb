@@ -15,4 +15,8 @@ Hotline::Application.routes.draw do
 
   post "responses/mark_answer", as: "mark_answer"
 
+  post "questions/search", as: "search"
+
+  # post "search/" => "questions#search", as: "search"
+
 end

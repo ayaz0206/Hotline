@@ -32,7 +32,6 @@
 			      <li class="has-dropdown topbar-field">
 							<a href="">Hi <%= current_user.first_name %> </a>
 			        <ul class="dropdown">
-			          <li><a href="#">Settings</a></li>
 			          <li><a href='/users/<%= current_user.id %>'> My Profile </a></li>
 								<li> <a href='<%= signout_path %>'> Sign Out </a> </li>
 			        </ul>
@@ -53,12 +52,14 @@
 				<li class="has-form topbar-field">
 				  <div class="row collapse">
 				  <span class='search'>
-				    <div class="large-8 small-8 columns">
-				      <input type="text" placeholder="Discover...">
-				    </div>
-				    <div class="large-4 small-4 columns">
-				      <a href="#" class="active button expand">Search</a>
-				    </div>
+				    <%= form_tag search_path, method: :post do |f| %>
+					    <div class="large-8 small-8 columns">
+					      <%= text_field_tag 'search', nil, placeholder: 'Discover...' %>
+					    </div>
+					    <div class="large-4 small-4 columns">
+								<%= submit_tag("Search", {class: 'active button expand'}) %>
+					    </div>
+				    <% end %>
 				    </span>
 				  </div>
 				</li>    

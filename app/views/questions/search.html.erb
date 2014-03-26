@@ -1,0 +1,17 @@
+
+	<section class='home-feed'>
+		<ul>
+		<% @results.each do |result| %>
+			<li> 
+				<a href ="<%= question_path(result) %>">  <%= result.title %> </a>  <br>
+		<% result.tag_list.each do |tag| %>
+			  <span class="radius secondary label"><%= tag %></span>
+		<% end %>
+		
+		<span class='username'><a href='<%= user_path(result.user)%>'> <%= result.user.name %> </a></span> <br>
+				<span class='username'> <%= timeago_tag result.created_at, :nojs => true, :limit => 10.days.ago %> </span> <br>
+			</li>
+		<% end %> 
+		</ul>
+</section>
+

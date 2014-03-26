@@ -18,7 +18,6 @@ class QuestionsController < ApplicationController
 
 
     def edit
-      # any user can edit these questions
     if current_user
       @question = Question.find(params[:id])
     else 
@@ -46,6 +45,10 @@ class QuestionsController < ApplicationController
       flash[:errors] = @question.errors.full_messages
       render 'new'
     end
+  end
+
+  def search 
+    @results = Question.where(["title LIKE ? OR description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"]);
   end
 
   
