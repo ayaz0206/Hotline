@@ -8,7 +8,7 @@ class ResponsesController < ApplicationController
       redirect_to question_path(@response.question)
     else
       flash[:errors] = @response.errors.full_messages
-      redirect_to question_path(@response.question)
+      redirect_to question_path(@response.question)      
     end
   end
 
