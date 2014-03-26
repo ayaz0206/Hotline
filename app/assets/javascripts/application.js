@@ -30,13 +30,29 @@ function submitAnswer() {
 	});
 }
 
+function rightDropown() {
+	$(document).ready(function(){
+	    $('.arrow').click(function() {
+	    	hidden = $('#box').is(":visible")
+	        if (hidden) {
+	            $('#box').slideUp("slow");
+	        } else {
+	            hidden = true;
+	            $('#box').slideDown("slow");
+	        }
+	    });
+	});
+}
+
+
 
 $(function(){ 
 	$(document).foundation(); 
 	$('#widget1').inputosaurus({
     width : '250px'
 	});
-
 	submitAnswer();
+	rightDropown();
 
 });
+
