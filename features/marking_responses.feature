@@ -12,3 +12,8 @@ Background:
 			Then I should see my response with my fullname
 			And I should be able to select the best answer
 			And The best answer should appear on top
+
+		Scenario: A User cannot mark other answers solved
+			And I am not logged in
+			And I click on a question title
+			Then I should not be able to select the best answer
