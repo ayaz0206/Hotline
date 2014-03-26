@@ -97,7 +97,7 @@ margin-bottom: 0;
 }
 
 .response-feed li{
-	padding: 10px 0px 20px 40px;
+	padding: 10px 0px 20px 20px;
 	display: -webkit-flex;
   display: flex;
 }
@@ -158,7 +158,7 @@ margin-bottom: 0;
 }
 
 .response-feed aside {
-	width: 50px;
+	width: 45px;
 }
 
 .response-feed section {
@@ -180,6 +180,7 @@ margin-bottom: 0;
 	cursor: pointer;
 }
 
+
  /*jQuery drop down box*/
 #box1 
 { width:100%; height:800px; background:#DAE6ED; display:none;}
@@ -192,4 +193,18 @@ margin-bottom: 0;
 
 .arrow2{background: #DAECED; cursor: pointer;}
 
+#tag_cloud {
+	padding: 4px;
+  width: 250px;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.0em; }
+  .l { font-size: 1.8em; }
+}
 
+
+
+.right-barindex {
+	border: 2px solid black;
+
+}

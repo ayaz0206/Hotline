@@ -1,6 +1,10 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+    if params[:tag]
+      @questions = Question.tagged_with(params[:tag])
+    else
+      @questions = Question.all
+    end
   end
 
   def show
@@ -46,6 +50,10 @@ class QuestionsController < ApplicationController
       flash[:errors] = @question.errors.full_messages
       render 'new'
     end
+  end
+
+  def tag_cloud
+    tag_list = Question.tag_list_counts_on(:tags, :limit => 5, :order => "count desc")
   end
 
   

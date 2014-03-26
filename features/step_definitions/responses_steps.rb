@@ -43,3 +43,8 @@ end
 Then(/^The best answer should appear on top$/) do
 
 end
+
+Then(/^I should not be able to select the best answer$/) do
+  page.should have_no_xpath("//li/aside/img")
+end
+

@@ -17,3 +17,7 @@ end
 Then(/^I click the Save button$/) do
   click_button("Save")
 end
+
+Then(/^I should not see edit link$/) do
+	page.should have_no_xpath("//section//a[text()='edit']")
+end
