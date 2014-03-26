@@ -30,13 +30,45 @@ function submitAnswer() {
 	});
 }
 
+function rightDropown() {
+	$(document).ready(function(){
+	    $('.arrow').click(function() {
+	    	hidden = $('.box').is(":visible")
+	        if (hidden) {
+	            $('.box').slideUp("slow");
+	        } else {
+	            hidden = true;
+	            $('.box').slideDown("slow");
+	        }
+	    });
+
+	    $('.arrow2').click(function() {
+	hidden = $('.box2').is(":visible")
+    if (hidden) {
+        $('.box2').slideUp("slow");
+    } else {
+        hidden = true;
+        $('.box2').slideDown("slow");
+    }
+});
+
+
+
+	});
+}
+
+
+
+
+
 
 $(function(){ 
 	$(document).foundation(); 
 	$('#widget1').inputosaurus({
     width : '250px'
 	});
-
 	submitAnswer();
+	rightDropown();
 
 });
+
