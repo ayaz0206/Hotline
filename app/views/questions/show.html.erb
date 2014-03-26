@@ -5,7 +5,7 @@
 		<h2><%= @question.title %> </h2><br>
 		<p> <%= render_question_description %> </p>
 		<% @question.tag_list.each do |tag| %>
-			  <span class="radius secondary label"><%= tag %></span>
+				  <span class="radius secondary label"><%= raw link_to tag, tag_path(tag) %></span>
 		<% end %>
 		<a href='<%= @question.file_avatar.url %>'><%=@question.file_avatar_file_name%></a><br>
 		<span class='username'><a href='<%= user_path(@question.user)%>'> <%= @question.user.name %> </a></span> <br>
