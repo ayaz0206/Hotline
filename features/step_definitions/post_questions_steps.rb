@@ -5,7 +5,9 @@ end
 Then(/^I can create a question$/) do
   fill_in('question[title]', :with => 'How do I install Devise?')
   fill_in('question[description]', :with => "Devise description")
+  fill_in('question[hangout_link]', :with => "<iframe test link>")
   click_button('Ask')
+
 end
 
 Then(/^I can see the complete question detail with my fullname$/) do
@@ -55,8 +57,10 @@ end
 Given(/^I create a question with tags$/) do
   fill_in('question[title]', :with => 'How do I install Devise?')
   fill_in('question[description]', :with => "Devise description")
+  fill_in('question[hangout_link]', :with => "<iframe test link>")
   fill_in('question[tag_list]', :with => "install, devise, rails, gem")
-  click_button('Ask')end
+  click_button('Ask')
+end
 
 Then(/^I should see the question with tags$/) do
   expect(page).to have_content("How do I install Devise?")

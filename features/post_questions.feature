@@ -10,7 +10,7 @@ Feature: Post Questions
   		And I can create a question 
   		And I can see the complete question detail with my fullname
   		And I see the message "Successfully Posted!"
-      And I see the google hangout buttons
+      And I see the google hangout on air button
 
 
     Scenario: A User can't post questions when not logged in

@@ -1,10 +1,10 @@
 Then(/^I reply to that question$/) do
-  fill_in('response', with: 'This is a response')
+  fill_in('response[response]', with: 'This is a response')
   click_button('Reply')   
 end
 
 When(/^I reply to that question again$/) do
-  fill_in('response', with: 'This is a second response')
+  fill_in('response[response]', with: 'This is a second response')
   click_button('Reply')   
 end
 
@@ -14,7 +14,7 @@ Then(/^I should see my response with my fullname$/) do
 end
 
 Then(/^I reply with no response$/) do
-  fill_in('response', with: '')
+  fill_in('response[response]', with: '')
   click_button('Reply')   
 end
 
@@ -23,16 +23,15 @@ Then(/^I should see an error$/) do
 end
 
 Then(/^I should not see the reply section$/) do
-  page.should_not have_xpath("//*[@name='response']")
-  page.should_not have_xpath("//input[@name='commit']")
+  page.should_not have_xpath("//*[@name='response[response]']")
+  page.should_not have_xpath("//input[@value='Reply']")
 end
 
-Then(/^I cannot see google hangout buttons$/) do
-  page.should_not have_xpath("//div[@class='g-hangout']")
+Then(/^I cannot see google hangout on air button$/) do
+  page.should_not have_xpath("//div[@id='placeholder-div3']")
 end
 
-Then(/^I see the google hangout buttons$/) do
-  page.should have_xpath("//div[@class='g-hangout']")
+Then(/^I see the google hangout on air button$/) do
   page.should have_xpath("//div[@id='placeholder-div3']")
 end
 
