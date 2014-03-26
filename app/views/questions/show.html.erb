@@ -43,6 +43,7 @@
 					<h5> Best Answer </h5> 
 				<% end %> 
 						<p><%= render_response(response) %> </p>
+						<a href='<%= response.file_avatar.url %>'><%= response.file_avatar_file_name %></a>
 						<span class='username'><a href='<%= user_path(response.user)%>'><%= response.user.name %></a></span> <br>
 						<span class='username'><%= timeago_tag response.created_at, :nojs => true, :limit => 10.days.ago %></span>
 					</section>
@@ -54,7 +55,7 @@
 
 	<% if current_user %>
 		<section class='reply'>
-			<%= form_tag response_path :method => :post do |f| %>
+			<%= form_for @response, :html => { :multipart => true } do |f| %>
 				<% if flash[:errors] %>
 					<div data-alert class="alert-box warning radius">
 						<%= flash[:errors].first %> 
@@ -62,9 +63,10 @@
 					</div>
 				<% end %>	
 				
-				<%= text_area_tag(:response, nil, placeholder: 'Make their life easier...')%>
+				<%= f.text_area(:response, placeholder: 'Make their life easier...')%>
+				<%= f.file_field(:file_avatar) %>
 				<input type='hidden' name='question_id' value='<%=@question.id%>'>  
-				<%= submit_tag("Reply", {class: 'active button'}) %>
+				<%= f.submit("Reply", {class: 'active button'}) %>
 			<% end %>
 		</section>
 	<% end %>

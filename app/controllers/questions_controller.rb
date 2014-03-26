@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find_by_id(params[:id])
     @responses = Response.where("question_id = '#{params[:id]}'").order(correct: :desc)
+    @response = Response.new
   end
 
   def new
@@ -67,7 +68,7 @@ class QuestionsController < ApplicationController
   
   private
   def question_params
-    params.require(:question).permit(:title, :description, :file_avatar)
+    params.require(:question).permit(:hangout_link, :title, :description, :file_avatar)
   end
 
 end

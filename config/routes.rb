@@ -4,9 +4,10 @@ Hotline::Application.routes.draw do
   root "questions#index"
   
   resources :questions
+  resources :responses
   
   get "users/create"
-  post "responses/create", as: "response"
+  # post "responses/create", as: "response"
   match "/auth/google_oauth2/callback" => "sessions#create", via: [:get, :post]
   match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
 
