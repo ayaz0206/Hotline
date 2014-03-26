@@ -1,6 +1,7 @@
 
 	<section class='home-feed'>
 		<ul>
+		<h6>Search results for "<%= params[:search] %>"</h6><br>
 		<% @results.each do |result| %>
 			<li> 
 				<a href ="<%= question_path(result) %>">  <%= result.title %> </a>  <br>

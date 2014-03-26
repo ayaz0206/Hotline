@@ -14,9 +14,9 @@ Hotline::Application.routes.draw do
   post 'questions/:id/edit' => "questions#update", as: "update_question"
 
   post "responses/mark_answer", as: "mark_answer"
+  get 'tags/:tag', to: 'questions#index', as: :tag
 
   post "questions/search", as: "search"
-
-  # post "search/" => "questions#search", as: "search"
+  get "search/:search" => "questions#result", as: "result"
 
 end

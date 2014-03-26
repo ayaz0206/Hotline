@@ -1,6 +1,10 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = Question.all
+    if params[:tag]
+      @questions = Question.tagged_with(params[:tag])
+    else
+      @questions = Question.all
+    end
   end
 
   def show
@@ -48,7 +52,16 @@ class QuestionsController < ApplicationController
   end
 
   def search 
+    redirect_to("/search/" + params[:search])
+  end
+
+  def result 
     @results = Question.where(["title LIKE ? OR description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"]);
+    render 'search'
+  end
+
+  def tag_cloud
+    tag_list = Question.tag_list_counts_on(:tags, :limit => 5, :order => "count desc")
   end
 
   
