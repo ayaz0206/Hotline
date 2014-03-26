@@ -99,6 +99,8 @@ margin-bottom: 0;
 
 .response-feed li{
 	padding: 10px 0px 20px 40px;
+	display: -webkit-flex;
+  display: flex;
 }
 
 .question .hangout{
@@ -154,6 +156,25 @@ margin-bottom: 0;
 
 .profile-questions a{
 	line-height: 2.5em;
+}
+
+.response-feed aside {
+	width: 50px;
+}
+
+.response-feed section {
+	-webkit-flex: 1;
+	flex: 1;
+}
+
+.response-feed section p {
+	margin-bottom: 0;
+}
+
+.response-feed section h5 {
+	color: salmon;
+	font-weight: 600;
+	line-height: 1.2;
 }
 
 .correct-ans {

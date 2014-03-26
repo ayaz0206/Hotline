@@ -25,17 +25,23 @@
 		<%= form_tag mark_answer_path, id: 'mark-answer', method: :post do |f| %>
 			<% @responses.each do |response| %>
 				<li>
+					<aside>
+						<% if response.correct == true %>
+							<%= image_tag('correct.png', size: "32", class: "correct-ans", 'data-id' => "#{response.id}", 'data-question' => "#{@question.id}")%>
+						<% else %>
+							<%= image_tag('disabled_correct.png', size: "32", class: "correct-ans", 'data-id' => "#{response.id}", 'data-question' => "#{@question.id}")%>
+						<% end %>
+					</aside>
+
+					<section>	
 				<% if response.correct == true %>
-					<h4> Best Answer </h4>
+					<h5> Best Answer </h5> 
 				<% end %> 
-				<%= render_response(response) %> <br> 
-					<span class='username'><a href='<%= user_path(response.user)%>'><%= response.user.name %></a></span> <br>
-					<span class='username'><%= timeago_tag response.created_at, :nojs => true, :limit => 10.days.ago %></span>
-					<% if response.correct == true %>
-						<%= image_tag('correct.png', size: "32", class: "correct-ans", 'data-id' => "#{response.id}", 'data-question' => "#{@question.id}")%>
-					<% else %>
-						<%= image_tag('disabled_correct.png', size: "32", class: "correct-ans", 'data-id' => "#{response.id}", 'data-question' => "#{@question.id}")%>
-					<% end %>
+						<p><%= render_response(response) %> </p>
+						<span class='username'><a href='<%= user_path(response.user)%>'><%= response.user.name %></a></span> <br>
+						<span class='username'><%= timeago_tag response.created_at, :nojs => true, :limit => 10.days.ago %></span>
+					</section>
+
 				</li>
 			<% end %>
 		<% end %>
