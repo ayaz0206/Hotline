@@ -1,7 +1,11 @@
 <div class="medium-8 columns">
 
 	<section class='question'>
-		<%= link_to "edit", edit_question_path(@question)  %>
+		
+		<% if current_user && current_user.questions.where(id: params[:id]).any? %>
+			<%= link_to "edit", edit_question_path(@question)  %>
+		<% end %>
+
 		<h2><%= @question.title %> </h2><br>
 		<p> <%= render_question_description %> </p>
 		<% @question.tag_list.each do |tag| %>
@@ -14,7 +18,6 @@
 			<section class='hangout'>
 		<% if current_user %>
 				<h4> Know the answer? </h4>
-				<div class="g-hangout" data-render="createhangout"></div>	
 				<div id="placeholder-div3"></div>
 		<% end %>
 			</section>
@@ -26,10 +29,12 @@
 			<% @responses.each do |response| %>
 				<li>
 					<aside>
-						<% if response.correct == true %>
-							<%= image_tag('correct.png', size: "32", class: "correct-ans", 'data-id' => "#{response.id}", 'data-question' => "#{@question.id}")%>
-						<% else %>
-							<%= image_tag('disabled_correct.png', size: "32", class: "correct-ans", 'data-id' => "#{response.id}", 'data-question' => "#{@question.id}")%>
+						<% if current_user && current_user.questions.where(id: params[:id]).any? %>
+							<% if response.correct == true %>
+								<%= image_tag('correct.png', size: "32", class: "correct-ans", 'data-id' => "#{response.id}", 'data-question' => "#{@question.id}")%>
+							<% else %>
+								<%= image_tag('disabled_correct.png', size: "32", class: "correct-ans", 'data-id' => "#{response.id}", 'data-question' => "#{@question.id}")%>
+							<% end %>
 						<% end %>
 					</aside>
 
