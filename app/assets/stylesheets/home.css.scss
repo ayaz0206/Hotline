@@ -47,7 +47,6 @@ margin-bottom: 0;
 }
 
 .right-bar {
-	border: 2px solid black;
 }
 
 .right-bar p {
@@ -182,7 +181,15 @@ margin-bottom: 0;
 }
 
  /*jQuery drop down box*/
-#box 
-{ width:100%; height:900px; background:#096; display:none;}
+#box1 
+{ width:100%; height:800px; background:#DAE6ED; display:none;}
+
+.arrow{background: pink; cursor: pointer;}
+
+
+#box2 
+{ width:100%; background:#DAE6ED; display:none;}
+
+.arrow2{background: #DAECED; cursor: pointer;}
 
 
