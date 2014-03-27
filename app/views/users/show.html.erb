@@ -1,8 +1,10 @@
 <div class="row">
   <div class="large-4 columns">
-		<img src= "<%= @profile_user.image %> ">
-		<h4> <strong><%= @profile_user.name %></strong></h4>
-		<p> Joined on <%= @profile_user.created_at %></p>
+		<section class='profile-image'>
+			<img src= "<%= @profile_user.image %> ">
+			<h4> <strong><%= @profile_user.name %></strong></h4>
+			<p> Joined on <%= @profile_user.created_at.strftime("%B %d, %Y") %></p>
+		</section>
   </div>
   <div class="large-8 columns">
   	<section class='profile-questions'>
