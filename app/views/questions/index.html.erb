@@ -4,7 +4,7 @@
 	<section class='home-feed'>
 
 
-		<ul>
+		<ul id="questions">
 			<% if params[:tag] %>
 				<h6>Tags matching "<%= params[:tag] %>"</h6><br>
 			<% end %>
@@ -25,9 +25,7 @@
 	</section>
 
   	<div>
-			<ul class="pagination">
 				<%= will_paginate @questions %>
-			</ul>
 		</div>
 
 

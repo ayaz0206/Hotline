@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require foundation
+//= require infinite-scroll
 //= require inputosaurus
 //= require rails-timeago
 // require turbolinks
