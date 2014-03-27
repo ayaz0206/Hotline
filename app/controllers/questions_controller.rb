@@ -58,7 +58,7 @@ class QuestionsController < ApplicationController
   end
 
   def result 
-    @results = Question.where(["title LIKE ? OR description LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"]);
+    @results = Question.where(["title ILIKE ? OR description ILIKE ?", "%#{params[:search]}%", "%#{params[:search]}%"]);
     render 'search'
   end
 
