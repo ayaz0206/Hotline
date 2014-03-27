@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
     else
       @questions = Question.all
     end
-      @questions = Question.paginate(:page => params[:page], :per_page => 15)
+      @questions = @questions.paginate(:page => params[:page], :per_page => 15)
   end
 
   def show
