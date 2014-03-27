@@ -183,16 +183,56 @@ border-top: 6px solid maroon;
 
 
  /*jQuery drop down box*/
-#box1 
-{ width:100%; height:800px; background:#DAE6ED; display:none;}
+#box1 { 
+	width:100%; 
+	height:800px;
+	background:#B4DFFA; 
+	display:none;
+	
+	
+}
 
-.arrow{background: pink; cursor: pointer;}
+#box1 {
+	text-align: center;
+}
+
+.arrow{
+	background: none;
+ 	cursor: pointer;
+ 	
+ 	border-bottom: solid 4px maroon;
+ 	text-align: center;
+ 	height: 30px;
+ 	padding-top: 5px;
+ }
+
+ .arrow:hover {
+ 	/*background: #007095;*/
+ 	color: #007095;
+ }
 
 
 #box2 
 { width:100%; background:#DAE6ED; display:none;}
 
-.arrow2{background: #DAECED; cursor: pointer;}
+#box2 {
+	text-align: center;
+}
+
+.arrow2{
+	background: none;
+ 	cursor: pointer;
+ 	
+ 	border-bottom: solid 4px maroon;
+ 	text-align: center;
+ 	height: 30px;
+ 	padding-top: 5px;
+ }
+
+ .arrow2:hover {
+ 	/*background: #007095;*/
+ 	color: #007095;
+ }
 
 #tag_cloud {
 	padding: 4px;
@@ -207,7 +247,11 @@ border-top: 6px solid maroon;
 	margin-top: 3px;
 }
 
+
+
+
 .inputosaurus-container .inputosaurus-input input {
 	width: 50px;
 	background: #fff;
 }
+
