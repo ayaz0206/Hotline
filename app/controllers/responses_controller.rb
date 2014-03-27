@@ -32,7 +32,7 @@ class ResponsesController < ApplicationController
   
   private
   def response_params
-    params.require(:response).permit(:response, :file_avatar) 
+    params.require(:response).permit(:response, :file_avatar, :hangout_link) 
   end
 end
 

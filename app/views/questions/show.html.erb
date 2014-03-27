@@ -44,6 +44,9 @@
 					<h5> Best Answer </h5> 
 				<% end %> 
 						<p><%= render_response(response) %> </p>
+						<% if !response.hangout_link.nil? %>
+							<br><p><%= render_response_hangout_link(response) %></p>
+						<% end %>
 						<a href='<%= response.file_avatar.url %>'><%= response.file_avatar_file_name %></a>
 						<span class='username'><a href='<%= user_path(response.user)%>'><%= response.user.name %></a></span> <br>
 						<span class='username'><%= timeago_tag response.created_at, :nojs => true, :limit => 10.days.ago %></span>
@@ -65,6 +68,7 @@
 				<% end %>	
 				
 				<%= f.text_area(:response, placeholder: 'Make their life easier...')%>
+				<%= f.text_field(:hangout_link, placeholder: "Paste the 'Embed Video URL' from the Hangout window in 'Links'")%>
 				<%= f.file_field(:file_avatar) %>
 				<input type='hidden' name='question_id' value='<%=@question.id%>'>  
 				<%= f.submit("Reply", {class: 'active button'}) %>
