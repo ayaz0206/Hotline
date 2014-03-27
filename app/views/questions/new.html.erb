@@ -10,12 +10,14 @@
 
 		<div id="placeholder-div3"></div> <br><br>
 		<%= f.text_field :title, placeholder: 'Title' %> <br>
-		<%= f.text_field :hangout_link, placeholder: 'Hangout Link' %> <br>
+		<%= f.text_field :hangout_link, placeholder: "Paste the 'Embed Video URL' from the Hangout window in 'Links'" %> <br>
 		<%= f.text_area :description, placeholder: 'Description' %> <br>
 		
-		<%= f.text_field :tag_list, {id: "widget1" } %><br>
+		<%= f.text_field :tag_list, {id: "widget1" } %><br><br>
+
+		<label> Attach one or more files as a zip file.</label>
 	
-	  <%= f.file_field :file_avatar %>
+	  <%= f.file_field :file_avatar %><br>
 
 		<%= f.submit("Ask", {class: 'active button'}) %>
 
@@ -58,20 +60,6 @@
 		
 
 
-<div class="arrow2"> How to Add your Question </div>
-	<div id="box2" class="box2">
-
-		<p>7. Give your question a title. To help people who are answering, give a brief description in the text field. Add tags, and upload a copy of your code. If it's one file add .txt to the file extension e.g. my file.html to my file.html.text. If you're uploading multiple files, zip them first.</p>
-
-		<p>8. Press Ask. Your question and video will be automatically embedded on the site, to be viewed by the askadev community.</p>
-
-		<p>9. Sit back and relax, help is on the way! While you wait for a reply, check out some of the other questions and answers on askadev to see if you can help someone else out.</p>
-		</p>
-
-	</div>
-
-		</section>
-</div>
 		
 
 
