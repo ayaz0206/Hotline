@@ -6,6 +6,7 @@ Then(/^I can create a question$/) do
   fill_in('question[title]', :with => 'How do I install Devise?')
   fill_in('question[description]', :with => "Devise description")
   fill_in('question[hangout_link]', :with => "<iframe test link>")
+  fill_in('question[tag_list]', :with => "one, tag")
   click_button('Ask')
 
 end

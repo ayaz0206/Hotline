@@ -59,9 +59,6 @@ function rightDropown() {
 
 
 
-
-
-
 $(function(){ 
 	$(document).foundation(); 
 	$('#widget1').inputosaurus({

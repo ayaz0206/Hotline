@@ -5,6 +5,7 @@ Given(/^I create a question$/) do
   fill_in('question[title]', :with => 'How do I install Devise?')
   fill_in('question[description]', :with => "Devise description")
   fill_in('question[hangout_link]', :with => "<iframe test link>")
+  fill_in('question[tag_list]', :with => "one, tag")
   click_button('Ask')
   visit "/signout"
 end
@@ -33,6 +34,7 @@ Given(/^I create second question$/) do
   fill_in('question[title]', :with => 'A second question?')
   fill_in('question[description]', :with => "A second answer!!")
   fill_in('question[hangout_link]', :with => "<iframe test link>")
+  fill_in('question[tag_list]', :with => "one, tag")
   click_button('Ask')
   visit "/signout"
 end
