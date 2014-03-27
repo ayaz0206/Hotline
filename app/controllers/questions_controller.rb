@@ -54,7 +54,11 @@ class QuestionsController < ApplicationController
   end
 
   def search 
-    redirect_to("/search/" + params[:search])
+    if params[:search] == nil
+      redirect_to :back
+    else 
+      redirect_to("/search/" + params[:search])
+    end
   end
 
   def result 
@@ -65,11 +69,6 @@ class QuestionsController < ApplicationController
   def tag_cloud
     tag_list = Question.tag_list_counts_on(:tags, :limit => 5, :order => "count desc")
   end
-
-  def paginate
-    
-  end
-
   
   private
   def question_params

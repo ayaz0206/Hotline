@@ -19,6 +19,8 @@ Hotline::Application.routes.draw do
   post "questions/search", as: "search"
   get "search/:search" => "questions#result", as: "result"
 
+  get "search" => "questions#search"
+
   get "users" => "users#all_users", as: "users"
 
 end
