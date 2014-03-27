@@ -8,7 +8,9 @@
 
 		<h2><%= @question.title %> </h2><br>
 		<p> <%= render_question_description %> </p>
-		<%= render_question_hangout_link %> <br>
+		<% if !@question.hangout_link.nil? %>
+			<%= render_question_hangout_link %> <br>
+		<% end %>
 		<% @question.tag_list.each do |tag| %>
 				  <span class="radius secondary label"><%= raw link_to tag, tag_path(tag) %></span>
 		<% end %>
