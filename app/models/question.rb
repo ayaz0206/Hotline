@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  validates_presence_of :title, :description, :hangout_link
+  validates_presence_of :title, :description, :tag_list
   
   validate :file_size_validation
 

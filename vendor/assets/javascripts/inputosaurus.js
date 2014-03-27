@@ -33,7 +33,7 @@
 			
 			// while typing, the user can separate values using these delimiters
 			// the value tags are created on the fly when an inputDelimiter is detected
-			inputDelimiters : [',', ';'],
+			inputDelimiters : [',', ';', ' '],
 
 			// this separator is used to rejoin all input items back to the value of the original <input>
 			outputDelimiter : ',',
