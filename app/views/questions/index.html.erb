@@ -1,3 +1,5 @@
+
+
 <div class="medium-8 columns">
 	<section class='home-feed'>
 
@@ -21,6 +23,14 @@
 		<% end %> 
 		</ul>
 	</section>
+
+  	<div>
+			<ul class="pagination">
+				<%= will_paginate @questions %>
+			</ul>
+		</div>
+
+
 </div>
 
 <div class="medium-4 columns">

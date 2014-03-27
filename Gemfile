@@ -44,6 +44,8 @@ gem 'acts-as-taggable-on'
 
 gem "jquery-ui-rails"
 
+gem "will_paginate"
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

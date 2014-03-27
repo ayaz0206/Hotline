@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
     else
       @questions = Question.all
     end
+      @questions = Question.paginate(:page => params[:page], :per_page => 20)
   end
 
   def show
@@ -65,11 +66,17 @@ class QuestionsController < ApplicationController
     tag_list = Question.tag_list_counts_on(:tags, :limit => 5, :order => "count desc")
   end
 
+  def paginate
+    
+  end
+
   
   private
   def question_params
     params.require(:question).permit(:hangout_link, :title, :description, :file_avatar)
   end
+
+
 
 end
 
