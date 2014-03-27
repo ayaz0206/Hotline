@@ -1,5 +1,4 @@
 module QuestionsHelper
-  include ActsAsTaggableOn::TagsHelper
 
   def render_question_description
     des = @question.description.split(' ')
