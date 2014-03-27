@@ -215,7 +215,24 @@ border-top: 6px solid maroon;
 #box2 
 { width:100%; background:#DAE6ED; display:none;}
 
-.arrow2{background: #DAECED; cursor: pointer;}
+#box2 {
+	text-align: center;
+}
+
+.arrow2{
+	background: none;
+ 	cursor: pointer;
+ 	
+ 	border-bottom: solid 4px maroon;
+ 	text-align: center;
+ 	height: 30px;
+ 	padding-top: 5px;
+ }
+
+ .arrow2:hover {
+ 	/*background: #007095;*/
+ 	color: #007095;
+ }
 
 #tag_cloud {
 	padding: 4px;
@@ -230,11 +247,24 @@ border-top: 6px solid maroon;
 	margin-top: 3px;
 }
 
-
-
-
 .inputosaurus-container .inputosaurus-input input {
 	width: 50px;
 	background: #fff;
+}
+
+.all-user {
+	float: left;
+	width: 150px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.all-user img {
+	width: 100px;
+}
+
+.all-user a{
+	font-size: 14px;
+	font-weight: 500;
 }
 

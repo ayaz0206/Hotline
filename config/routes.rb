@@ -7,7 +7,6 @@ Hotline::Application.routes.draw do
   resources :responses
   
   get "users/create"
-  # post "responses/create", as: "response"
   match "/auth/google_oauth2/callback" => "sessions#create", via: [:get, :post]
   match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
 
@@ -19,5 +18,7 @@ Hotline::Application.routes.draw do
 
   post "questions/search", as: "search"
   get "search/:search" => "questions#result", as: "result"
+
+  get "users" => "users#all_users", as: "users"
 
 end

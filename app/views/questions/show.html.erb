@@ -8,7 +8,9 @@
 
 		<h2><%= @question.title %> </h2><br>
 		<p> <%= render_question_description %> </p>
-		<%= render_question_hangout_link %> <br>
+		<% if !@question.hangout_link.nil? %>
+			<%= render_question_hangout_link %> <br>
+		<% end %>
 		<% @question.tag_list.each do |tag| %>
 				  <span class="radius secondary label"><%= raw link_to tag, tag_path(tag) %></span>
 		<% end %>
@@ -44,6 +46,9 @@
 					<h5> Best Answer </h5> 
 				<% end %> 
 						<p><%= render_response(response) %> </p>
+						<% if !response.hangout_link.nil? %>
+							<br><p><%= render_response_hangout_link(response) %></p>
+						<% end %>
 						<a href='<%= response.file_avatar.url %>'><%= response.file_avatar_file_name %></a>
 						<span class='username'><a href='<%= user_path(response.user)%>'><%= response.user.name %></a></span> <br>
 						<span class='username'><%= timeago_tag response.created_at, :nojs => true, :limit => 10.days.ago %></span>
@@ -65,6 +70,7 @@
 				<% end %>	
 				
 				<%= f.text_area(:response, placeholder: 'Make their life easier...')%>
+				<%= f.text_field(:hangout_link, placeholder: "Paste the 'Embed Video URL' from the Hangout window in 'Links'")%>
 				<%= f.file_field(:file_avatar) %>
 				<input type='hidden' name='question_id' value='<%=@question.id%>'>  
 				<%= f.submit("Reply", {class: 'active button'}) %>
@@ -76,7 +82,7 @@
 	<div class="medium-4 columns">
 	<section class='right-bar'>
 
-	<div class="arrow2"> How to Record an Answer </div>
+	<div class="arrow2"> How to Record an Answer <i class="fa fa-caret-square-o-down"></i></div>
 	 <div id="box2" class="box2">
 
 		<p>1. Download the attached code and open it in your preferred text editor, ready to work on.</p>
