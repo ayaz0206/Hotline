@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @profile_user = User.find(params[:id])
  	end
 
+ 	def all_users
+ 		@users = User.all
+ 	end
+
 
   private
   def user_params

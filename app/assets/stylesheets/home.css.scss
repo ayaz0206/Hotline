@@ -247,11 +247,24 @@ border-top: 6px solid maroon;
 	margin-top: 3px;
 }
 
-
-
-
 .inputosaurus-container .inputosaurus-input input {
 	width: 50px;
 	background: #fff;
+}
+
+.all-user {
+	float: left;
+	width: 150px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.all-user img {
+	width: 100px;
+}
+
+.all-user a{
+	font-size: 14px;
+	font-weight: 500;
 }
 

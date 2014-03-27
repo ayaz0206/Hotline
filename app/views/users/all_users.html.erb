@@ -1,0 +1,10 @@
+
+<section class='home-feed'>
+	<% @users.each do |user| %>
+		<section class='all-user'>
+			<a href='<%=user_path(user)%>'> <img src= "<%= user.image %> "> </a>
+			<h5><a href='<%=user_path(user)%>'><%= user.name %></a></h5>
+		</section>
+	<% end %>
+</section>
+
