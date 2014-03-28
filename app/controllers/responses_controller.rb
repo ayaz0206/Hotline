@@ -3,12 +3,17 @@ class ResponsesController < ApplicationController
     @response = Response.new(response_params)
     @response.question = Question.find(params[:question_id].to_i)
     @response.user = current_user
-    if @response.save
-      flash[:notice] = "Successfully Replied!"
+    if params[:response][:response].include? "<script>"
+      flash[:errors] = ["Sorry there was an error with your reply. Please try again!"]
       redirect_to question_path(@response.question)
-    else
-      flash[:errors] = @response.errors.full_messages
-      redirect_to question_path(@response.question)      
+    else    
+      if @response.save
+        flash[:notice] = "Successfully Replied!"
+        redirect_to question_path(@response.question)
+      else
+        flash[:errors] = @response.errors.full_messages
+        redirect_to question_path(@response.question)      
+      end
     end
   end
 
