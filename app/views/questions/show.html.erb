@@ -17,7 +17,9 @@
 		<% end %>
 		<br>
 		
-		<br><a href='<%= @question.file_avatar.url %>'><%=@question.file_avatar_file_name%></a><br>
+		<% if @question.file_avatar_file_name %>
+			<br><i class="fa fa-paperclip"></i><a href='<%= @question.file_avatar.url %>'> <%=@question.file_avatar_file_name%></a><br>
+		<% end %>
 		<span class='username'><a href='<%= user_path(@question.user)%>'> <%= @question.user.name %> </a></span> <br>
 		<span class='username'> <%= timeago_tag @question.created_at, :nojs => true, :limit => 10.days.ago %> </span>
 
