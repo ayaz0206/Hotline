@@ -6,7 +6,7 @@
 			<li> 
 				<a href ="<%= question_path(result) %>">  <%= result.title %> </a>  <br>
 				<% result.tag_list.each do |tag| %>
-					  <span class="radius secondary label"><%= tag %></span>
+					  <span class="radius secondary label"><%= raw link_to tag, tag_path(tag) %></span>
 				<% end %>
 		
 		<span class='username'><a href='<%= user_path(result.user)%>'> <%= result.user.name %> </a></span> <br>
